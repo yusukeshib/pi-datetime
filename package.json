@@ -1,0 +1,50 @@
+{
+	"name": "@yusukeshib/pi-datetime",
+	"version": "0.1.0",
+	"description": "Stamp the local time into the pi buffer after prompts, tool runs, and responses.",
+	"keywords": [
+		"pi-package",
+		"pi-extension",
+		"datetime",
+		"timestamp"
+	],
+	"type": "module",
+	"license": "MIT",
+	"author": "Yusuke Shibata <yusukeshib@gmail.com>",
+	"homepage": "https://github.com/yusukeshib/pi-datetime#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yusukeshib/pi-datetime.git"
+	},
+	"bugs": {
+		"url": "https://github.com/yusukeshib/pi-datetime/issues"
+	},
+	"files": [
+		"extensions/",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"check": "bun run typecheck && bun run biome:check",
+		"release": "bun publish --access public",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"format:check": "biome format .",
+		"biome:check": "biome check ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.14",
+		"@earendil-works/pi-coding-agent": "^0.79.0",
+		"@types/bun": "^1.3.0",
+		"typescript": "^5.7.0"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*"
+	},
+	"pi": {
+		"extensions": [
+			"./extensions"
+		]
+	}
+}
